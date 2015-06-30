@@ -1,0 +1,50 @@
+﻿<div class="row" ng-app="PrimesApp" ng-controller="PrimeTableCtrl">
+    <div class="col-md-10">
+        <h3>Primes Table:</h3>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Parameters</div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <label>Columns:</label>
+                    <input ng-model="requestModel.columns" />
+                </div>
+
+                <div class="col-md-4">
+                    <label>Start:</label>
+                    <input ng-model="requestModel.start" />
+                </div>
+
+                <div class="col-md-4">
+                    <label>End:</label>
+                    <input ng-model="requestModel.end" />
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="col-md-4 col-md-offset-4">
+                    <label>Start:</label>
+                    <button class="btn btn-primary" ng-click="generateTable()">Generate Table</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div ng-repeat="rows in primes" class="row">
+                    <div ng-repeat="number in rows" class="col-md-1">
+                        {{number}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/angular")
+
+@section scripts {
+
+    <script src="~/Scripts/Controllers/PrimeTableController.js"></script>
+
+}
